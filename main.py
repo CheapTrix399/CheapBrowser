@@ -1,13 +1,14 @@
-from textwrap import fill
 import tkinter
+import json
 from tkinter import ttk
 from html_parsing import parse_html
 
+config = json.load(open("config.json"))
 main = tkinter.Tk()
 main.title("CheapBrowser")
 # main.state('zoomed')
-w = 800
-h = 600
+w = int(config["width"])
+h = int(config["height"])
 main.geometry(str(w)+"x"+str(h))
 
 frame= tkinter.Frame(main,width=w,height=h)
@@ -48,15 +49,19 @@ def openURL():
     current_x = 0
     current_y = 25
     elements = []
-    url = urlbar.get()
-    html = parse_html(url)
-    render_element(html)
-    for element in elements:
-        element.place(x=current_x,y=current_y,height=23)
-        current_y += 30
-        main.update_idletasks()
-        frame2.configure(height=current_y+30)
-        canvas.configure(scrollregion = canvas.bbox('all'))
+    try:
+        url = urlbar.get()
+        html = parse_html(url)
+        render_element(html)
+        for element in elements:
+            element.place(x=current_x,y=current_y,height=23)
+            current_y += 30
+            main.update_idletasks()
+            frame2.configure(height=current_y+30)
+            canvas.configure(scrollregion = canvas.bbox('all'))
+    except Exception as e:
+        elements.append(tkinter.Label(frame2,text=str(e),anchor=tkinter.W,justify=tkinter.LEFT))
+        elements[0].place(x=current_x,y=current_y)
 
 urlbar = tkinter.Entry(frame)
 urlgo = tkinter.Button(frame,text="Open URL",command= openURL)

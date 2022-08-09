@@ -17,7 +17,6 @@ python main.py
 - JS
 - HTML: escape characters, image, audio, video
 - Multi-Tab pages
-- Browser Config file
 
 ## Motivation
 

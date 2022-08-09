@@ -13,10 +13,8 @@ class Stack:
         return pop
 
 class DOM:
-    nodes = []
     def __init__(self,tag):
         tag_split = self.split_tag(tag)
-        self.__class__.nodes.append(self)
         self.tag = tag_split[0][0]
         self.attributes = {}
         if(len(tag_split)>1):
