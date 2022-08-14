@@ -8,6 +8,12 @@ Python 3.10.5 ( Should work with Python 3+)
 pip install -r requirements.txt
 python main.py
 ```
+### For Linux Users
+```
+sudo pacman -S tk                   # Arch Based Distros
+sudo apt-get install python3-tk     # Debian based distros
+sudo dnf install -y python3-tkinter # Fedora
+```
 ## Finished:  
 - HTML Parsing
 - Tkinter Rendering
@@ -15,8 +21,8 @@ python main.py
 - Tkinter Layout
 - CSS-Parsing
 - JS
-- HTML: escape characters, image, audio, video
-- Multi-Tab pages
+- HTML: escape characters, audio, video, POST req forms
+- Multi-Tab pages / Multi-Threading
 
 ## Motivation
 

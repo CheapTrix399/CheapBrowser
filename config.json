@@ -1,4 +1,10 @@
 {
     "width":"800",
-    "height":"600"
+    "height":"600",
+    "urlbar_height": "25",
+    "scrollbar_width": "20",
+    "urlbar_width_scale": "0.75",
+    "font": "Arial",
+    "h1_size": 20,"h2_size": 18,"h3_size": 16,"h4_size": 14,"h5_size": 12,"h6_size": 10,"p_size": 8,
+    "element_padding": 30
 }
